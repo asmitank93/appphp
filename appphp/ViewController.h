@@ -10,6 +10,12 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *u_id;
 
+@property (weak, nonatomic) IBOutlet UITextField *name;
+
+@property (weak, nonatomic) IBOutlet UITextField *email;
+@property (weak, nonatomic) IBOutlet UITextField *pass;
+- (IBAction)btn:(id)sender;
 @end
 
