@@ -1,40 +1,45 @@
 //
-//  ViewController.m
+//  SecondViewController.m
 //  appphp
 //
-//  Created by Captain 10.11.4 on 11/06/16.
+//  Created by Captain 10.11.4 on 18/06/16.
 //  Copyright © 2016 Captain 10.11.4. All rights reserved.
 //
 
-#import "ViewController.h"
 #import "SecondViewController.h"
-#import "DetailViewController.h"
 
-@interface ViewController ()
+@interface SecondViewController ()
 
 @end
 
-@implementation ViewController
-@synthesize name,pass,email;
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-   }
+@implementation SecondViewController
+@synthesize user_pass,user_email;
 
-- (void)didReceiveMemoryWarning
-{
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+}
+
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-    
+/*
+#pragma mark - Navigation
 
-- (IBAction)btn_submit:(id)sender
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+- (IBAction)btn_login:(id)sender
 {
-    NSURL *URL = [NSURL URLWithString:@"http://localhost/loginphp/insertdata.php"];
+    NSURL *URL = [NSURL URLWithString:@"http://localhost/loginphp/logindata.php"];
     
-    NSString *st_format=[NSString stringWithFormat:@"u_nm=%@&u_email=%@&u_pass=%@&",name.text,email.text,pass.text];
+    NSString *st_format=[NSString stringWithFormat:@"u_email=%@&u_pass=%@&",user_email.text,user_pass.text];
     
     NSMutableURLRequest *req=[[NSMutableURLRequest alloc]initWithURL:URL];
     [req setHTTPBody:[st_format dataUsingEncoding:NSUTF8StringEncoding]];
